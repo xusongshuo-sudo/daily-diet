@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健脾补肾补气血一周饮食</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e64343',
+                        secondary: '#ff7a7a',
+                        accent: '#f8f9fa',
+                        light: '#ffffff',
+                        dark: '#333333',
+                        muted: '#666666',
+                        today: '#4caf50',
+                        todayLight: '#e8f5e8',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 12px rgba(0,0,0,0.08)',
+                        'card-hover': '0 8px 24px rgba(0,0,0,0.12)',
+                        'today': '0 4px 16px rgba(76, 175, 80, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-gradient {
+                background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+            }
+            .day-gradient {
+                background: linear-gradient(135deg, #e64343 0%, #ff7a7a 100%);
+            }
+            .today-gradient {
+                background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+            }
+            .transition-all-300 {
+                transition: all 0.3s ease;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-accent min-h-screen font-sans text-dark">
+    <!-- 顶部导航 -->
+    <header class="bg-primary text-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-shadow">
+                <i class="fa fa-cutlery mr-2"></i>健脾补肾补气血 一周饮食卡
+            </h1>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 饮食规则卡片 -->
+        <section class="mb-8">
+            <div class="bg-white rounded-2xl shadow-card p-6 transition-all-300 hover:shadow-card-hover">
+                <h2 class="text-xl font-bold text-primary mb-4 flex items-center">
+                    <i class="fa fa-list-alt mr-2"></i>饮食原则
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <p>调脾胃、补气血、补肾气三目标</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <p>多吃：虾仁、山药、玉米、生菜、南瓜、番薯</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <p>早餐新增：黄豆豆浆、黑豆豆浆、全麦吐司</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-times-circle text-red-500 mt-1 mr-3"></i>
+                        <p>忌：生冷、油炸、奶茶、宵夜、冰饮</p>
+                    </div>
+                    <div class="flex items-start md:col-span-2">
+                        <i class="fa fa-info-circle text-blue-500 mt-1 mr-3"></i>
+                        <p>喝汤当天：清淡、不喝咖啡浓茶</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 一周饮食卡片 -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-primary mb-6 flex items-center">
+                <i class="fa fa-calendar mr-2"></i>一周调理饮食计划
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- 周一 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="monday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周一 健脾调理
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>黄豆豆浆 + 小米南瓜粥 + 水煮蛋</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p>杂粮饭 + 清炒山药 + 虾仁生菜</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p>红枣3颗</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>山药玉米排骨汤 + 清炒菠菜</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 周二 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="tuesday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周二 补气血调理
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>红豆红枣粥 + 全麦吐司1片</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p>玉米饭 + 西兰花炒虾仁</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p class="text-primary font-medium">当归北芪桂圆红枣鸽子汤</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>鲫鱼豆腐汤 + 生菜</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 周三 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="wednesday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周三 补肾气调理
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>黑豆豆浆 + 三黑粥 + 蒸南瓜</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p>杂粮饭 + 板栗排骨 + 清炒山药</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p>核桃/腰果一小把</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>山药枸杞瘦肉汤 + 生菜</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 周四 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="thursday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周四 脾胃休整
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>黄豆豆浆 + 山药莲子粥 + 水煮蛋</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p>荞麦饭 + 清蒸鱼 + 生菜</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p>蒸番薯一小块</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>小米粥 + 玉米 + 豆腐干</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 周五 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="friday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周五 暖肾调理
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>黑豆豆浆 + 红枣枸杞小米粥</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p class="text-primary font-medium">清蒸驴肉</p> + 玉米 + 生菜
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p>原味花生</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>猪肝菠菜粥（少量）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 周六 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="saturday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周六 综合滋补
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>黄豆豆浆 + 莲子芡实粥 + 蒸番薯</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p>杂粮饭 + 黄焖鸡 + 清炒山药</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p class="text-primary font-medium">肝肾脾胃综合滋补汤（15-17点）</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>菌菇汤 + 生菜 + 玉米</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-primary/5 rounded-xl p-3">
+                            <p class="text-sm font-semibold text-primary mb-2">滋补汤配方：</p>
+                            <p class="text-sm text-muted">熟地15g 山药20g 当归10g 黄芪15g 枸杞10g 莲子10g 黑芝麻10g 红枣5颗 生姜3片</p>
+                            <p class="text-sm text-muted mt-2">做法：泡30分钟 → 加水1500ml → 大火煮开小火炖1小时</p>
+                            <p class="text-sm text-muted mt-1">可加：鸡腿/猪腱子肉｜每周1-2次</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 周日 -->
+                <div class="bg-white rounded-2xl shadow-card overflow-hidden transition-all-300 hover:shadow-card-hover" id="sunday-card">
+                    <div class="day-gradient text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fa fa-sun-o mr-2"></i>周日 清淡调理修复
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-coffee"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">早餐</p>
+                                <p>黑豆豆浆 + 全麦吐司1片 + 蒸南瓜</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">午餐</p>
+                                <p>杂蔬鸡肉焖饭（加玉米）</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-apple"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">下午</p>
+                                <p>陈皮茯苓水</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-primary/10 text-primary rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <div>
+                                <p class="font-semibold text-sm text-muted">晚餐</p>
+                                <p>枸杞乌鸡汤 + 生菜沙拉</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 经后专属 -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl shadow-card p-6 transition-all-300 hover:shadow-card-hover">
+                <h2 class="text-xl font-bold text-primary mb-4 flex items-center">
+                    <i class="fa fa-heart mr-2"></i>经后专属调理
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-3">月经干净后 连喝4-5天</h3>
+                        <p class="text-muted mb-4">补气血不胖</p>
+                        <div class="bg-white rounded-xl p-4 shadow-sm">
+                            <p class="font-semibold text-primary mb-2">配方：</p>
+                            <p class="text-dark">桂圆5-10颗 + 当归10-15g + 大枣5颗 + 枸杞15-20g</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-3">功效：</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                <span>暖宫寒</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                <span>补气血</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                <span>调量少</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-green-500 mr-2"></i>
+                                <span>止痛经</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">健脾补肾补气血 一周饮食卡</p>
+            <p class="text-sm opacity-80">合理饮食，健康生活</p>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 卡片悬停效果
+        const cards = document.querySelectorAll('.shadow-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('scale-105');
+            });
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('scale-105');
+            });
+        });
+
+        // 根据今日日期突出显示对应卡片
+        function highlightTodayCard() {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0-6, 0是周日
+            
+            // 映射星期几到卡片ID
+            const dayMap = {
+                0: 'sunday-card',     // 周日
+                1: 'monday-card',     // 周一
+                2: 'tuesday-card',    // 周二
+                3: 'wednesday-card',  // 周三
+                4: 'thursday-card',   // 周四
+                5: 'friday-card',     // 周五
+                6: 'saturday-card'    // 周六
+            };
+            
+            const todayCardId = dayMap[dayOfWeek];
+            const todayCard = document.getElementById(todayCardId);
+            
+            if (todayCard) {
+                // 移除其他卡片的高亮
+                document.querySelectorAll('[id$="-card"]').forEach(card => {
+                    card.classList.remove('border-2', 'border-today', 'shadow-today');
+                    const header = card.querySelector('.day-gradient');
+                    if (header) {
+                        header.classList.remove('today-gradient');
+                        header.classList.add('day-gradient');
+                    }
+                });
+                
+                // 高亮今日卡片
+                todayCard.classList.add('border-2', 'border-today', 'shadow-today');
+                const header = todayCard.querySelector('.day-gradient');
+                if (header) {
+                    header.classList.remove('day-gradient');
+                    header.classList.add('today-gradient');
+                }
+            }
+        }
+
+        // 页面加载完成后执行
+        window.addEventListener('DOMContentLoaded', highlightTodayCard);
+    </script>
+</body>
+</html>
