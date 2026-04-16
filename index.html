@@ -524,7 +524,7 @@
             });
         });
 
-        // 根据今日日期突出显示对应卡片
+        // 根据今日日期突出显示对应卡片并置顶
         function highlightTodayCard() {
             const today = new Date();
             const dayOfWeek = today.getDay(); // 0-6, 0是周日
@@ -560,6 +560,13 @@
                 if (header) {
                     header.classList.remove('day-gradient');
                     header.classList.add('today-gradient');
+                }
+                
+                // 置顶今日卡片
+                const gridContainer = todayCard.parentElement;
+                if (gridContainer) {
+                    // 将今日卡片移到网格容器的第一个位置
+                    gridContainer.insertBefore(todayCard, gridContainer.firstChild);
                 }
             }
         }
